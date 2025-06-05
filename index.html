@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송준석의 포트폴리오</title>
+    <link rel="stylesheet" href="styles.css"> 
+
+    <style>
+        /* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 전체 배경 색상 및 텍스트 색상 */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* 네비게이션 바 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* 히어로 섹션 스타일 */
+.hero {
+    background-color: #2980b9;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    padding: 10px 30px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #e67e22;
+}
+
+/* 소개 섹션 스타일 */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* 포트폴리오 섹션 스타일 */
+.portfolio {
+    padding: 50px 20px;
+    background-color: #ecf0f1;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 자동 크기 조정 */
+    gap: 30px;
+    justify-items: center; /* 카드 가운데 정렬 */
+    align-items: center;  /* 카드 가운데 정렬 */
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 auto; /* 카드 자체를 가운데 정렬 */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.project-card .btn {
+    padding: 8px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.project-card .btn:hover {
+    background-color: #2980b9;
+}
+
+/* 연락처 폼 스타일 */
+.contact {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border: 1px solid #3498db;
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #3498db;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 네비게이션 바 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#portfolio">포트폴리오</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero" id="home">
+        <h1>안녕하세요, 송준석입니다!</h1>
+        <p>프론트엔드 개발자 | 포트폴리오</p>
+        <a href="#portfolio" class="btn">포트폴리오 보기</a>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section class="about" id="about">
+        <h2>저에 대해</h2>
+        <p>안녕하세요! 저는 동양미래대학교 컴퓨터소프트웨어학과에 재학 중인 송준석입니다. 축구와 웹 개발을 사랑하는 학생입니다. 다양한 기술을 배우고 실제 프로젝트에서 경험을 쌓는 것을 즐깁니다.</p>
+    </section>
+
+    <!-- 포트폴리오 섹션 -->
+    <section class="portfolio" id="portfolio">
+        <h2>나의 포트폴리오</h2>
+        <div class="portfolio-grid">
+            <!-- 프로젝트 카드 1 -->
+            <div class="project-card">
+                <h3>프로젝트 1</h3>
+                <p>웹사이트 디자인 및 구현</p>
+                <a href="#" class="btn">프로젝트 보기</a>
+            </div>
+            <!-- 프로젝트 카드 2 -->
+            <div class="project-card">
+                <h3>프로젝트 2</h3>
+                <p>웹 애플리케이션 개발</p>
+                <a href="#" class="btn">프로젝트 보기</a>
+            </div>
+            <!-- 프로젝트 카드 3 -->
+            <div class="project-card">
+                <h3>프로젝트 3</h3>
+                <p>API 통합</p>
+                <a href="#" class="btn">프로젝트 보기</a>
+            </div>
+            <div class="project-card">
+                <h3>프로젝트 4</h3>
+                <p>개인 블로그 시스템</p>
+                <a href="#" class="btn">프로젝트 보기</a>
+            </div>
+            <div class="project-card">
+                <h3>프로젝트 5</h3>
+                <p>영화 검색 웹사이트</p>
+                <a href="#" class="btn">프로젝트 보기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section class="contact" id="contact">
+        <h2>연락처</h2>
+        <form action="#">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">메시지</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">보내기</button>
+        </form>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2025 송준석. 모든 권리 보유.</p>
+    </footer>
+
+</body>
+
+</html>
